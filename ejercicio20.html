@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20 - Tablas de Multiplicar</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 30px; 
+            background-color: #f0f2f5; 
+        }
+        .contenedor {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        button {
+            background-color: #6610f2; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover { background-color: #520dc2; }
+
+        .tabla-resultado {
+            text-align: left;
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace; 
+            font-size: 1.1em;
+            color: #333;
+        }
+        .fila { margin: 5px 0; border-bottom: 1px solid #ccc; padding-bottom: 2px;}
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Tablas de Multiplicar</h1>
+        <p>Introduce un número para ver su tabla del 1 al 10.</p>
+        
+        <button onclick="crearTabla()">Generar Tabla</button>
+        
+        <div id="resultado" style="display:none;" class="tabla-resultado"></div>
+    </div>
+
+    <script>
+        function crearTabla() {
+            // 1. Pedir el número
+            let input = prompt("¿Qué tabla de multiplicar deseas ver?");
+            let num = parseInt(input);
+
+            // Validación
+            if (isNaN(num)) {
+                alert("Por favor, ingresa un número válido.");
+                return;
+            }
+
+            // 2. Generar el contenido HTML
+            let contenidoHTML = `<h3>Tabla del ${num}</h3>`;
+            let mensajeConsola = "";
+
+            for (let i = 1; i <= 10; i++) {
+                let res = i * num;
+                // Agregamos cada línea al HTML
+                contenidoHTML += `<div class='fila'>${num} x ${i} = <strong>${res}</strong></div>`;
+                
+                // Guardamos texto para la consola
+                mensajeConsola += `${num} x ${i} = ${res} \n`;
+            }
+
+            // 3. Mostrar en la página (DOM)
+            let caja = document.getElementById("resultado");
+            caja.style.display = "block";
+            caja.innerHTML = contenidoHTML;
+
+
+            console.log("--- Tabla generada ---");
+            console.log(mensajeConsola);
+        }
+    </script>
+</body>
+</html>
