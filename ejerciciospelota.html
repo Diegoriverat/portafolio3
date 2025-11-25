@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto: Pelota Animada</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        /* Estilo inicial de la pelota */
+        .pelota {
+            width: 100px; /* Tamaño inicial */
+            cursor: pointer; /* Manita al pasar el mouse */
+            
+            /* LA MAGIA DE LA TRANSICIÓN */
+            /* Definimos que la transformación tardará 2 segundos en completarse */
+            transition: transform 2s ease-in-out; 
+        }
+
+        /* Estado al pasar el mouse (HOVER) */
+        .pelota:hover {
+            /* Aquí aplicamos 3 transformaciones juntas:
+               1. translateX(500px): Mueve la pelota 500 pixeles a la derecha.
+               2. scale(1.5): Hace la pelota 1.5 veces más grande.
+               3. rotate(360deg): Hace que la pelota ruede (giro completo).
+            */
+            transform: translateX(500px) scale(1.5) rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Reto Cumplido: Animación Compuesta</h1>
+    <p>Pasa el mouse sobre la pelota para verla rodar, crecer y moverse.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg" alt="Pelota de fútbol" class="pelota">
+
+</body>
+</html>
