@@ -1,0 +1,23 @@
+<html>
+<body>
+<h1>JavaScript if .. else</h1>
+
+<p>Un saludo basado en la hora:</p>
+
+<p id="demo"></p>
+
+<script>
+const horaActual = new Date().getHours(); 
+let mensaje;
+
+if (horaActual < 19) {
+  mensaje = "La hora es: " + horaActual + ". Que tengas buen día.";
+} else {
+  mensaje = "Buenas noches.";
+}
+
+document.getElementById("demo").innerHTML = mensaje;
+</script>
+
+</body>
+</html>
