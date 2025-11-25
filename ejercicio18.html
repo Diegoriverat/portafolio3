@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18 - Simulador de Saludos</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 30px; }
+        .saludo {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            padding: 10px;
+            margin: 5px auto;
+            border-radius: 5px;
+            max-width: 400px;
+            border: 1px solid #badbcc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 18: Simulador de Saludos</h1>
+    <p>Presiona el botón para iniciar el programa.</p>
+    
+    <button onclick="iniciarSaludos()">Iniciar Saludos</button>
+
+    <div id="contenedorSaludos"></div>
+
+    <script>
+        function iniciarSaludos() {
+            let contenedor = document.getElementById("contenedorSaludos");
+            contenedor.innerHTML = ""; 
+
+            let usuario = prompt("Ingresa tu nombre:");
+            
+            if (!usuario) { usuario = "Amigo"; }
+
+            let inputVeces = prompt("¿Cuántas veces quieres que te salude?");
+            let repeticiones = parseInt(inputVeces);
+
+            if (isNaN(repeticiones) || repeticiones <= 0) {
+                alert("Por favor ingresa un número válido mayor a 0.");
+                return;
+            }
+
+            for (let k = 0; k < repeticiones; k++) {
+                contenedor.innerHTML += `<div class='saludo'>Hola, <strong>${usuario}</strong>! 👋 (Saludo #${k+1})</div>`;
+            }
+        }
+        
+    </script>
+</body>
+</html>

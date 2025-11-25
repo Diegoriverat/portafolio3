@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19 - Calculadora</title>
+    <style>
+        /* Estilos para que se vea centrado y limpio */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #e9ecef; 
+        }
+        .tarjeta-calculadora {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 { color: #333; margin-bottom: 10px; }
+        
+        button {
+            background-color: #0d6efd; /* Azul Bootstrap */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        button:hover { background-color: #0b5ed7; }
+        
+        .caja-resultado {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 5px solid #0d6efd;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tarjeta-calculadora">
+        <h1>Calculadora JS</h1>
+        <p>Presiona el botón, ingresa dos números y el símbolo de la operación ( +, -, *, / ).</p>
+        
+        <button onclick="iniciarCalculadora()">🔢 Calcular</button>
+        
+        <div id="pantallaResultado" class="caja-resultado" style="display:none;"></div>
+    </div>
+
+    <script>
+        function iniciarCalculadora() {
+            // 1. Pedir datos al usuario
+            let val1 = parseFloat(prompt("Ingresa el primer número:"));
+            
+            // Si el usuario cancela o no pone número, detenemos la ejecución
+            if (isNaN(val1)) { alert("Por favor ingresa un número válido."); return; }
+
+            let val2 = parseFloat(prompt("Ingresa el segundo número:"));
+            if (isNaN(val2)) { alert("Por favor ingresa un número válido."); return; }
+
+            let op = prompt("Escribe la operación: +, -, * o  /");
+
+            let final;
+
+            // 2. Lógica Switch (Igual que en tu ejercicio original)
+            switch (op) {
+                case "+":
+                    final = val1 + val2;
+                    break;
+                case "-":
+                    final = val1 - val2;
+                    break;
+                case "*":
+                    final = val1 * val2;
+                    break;
+                case "/":
+                    if (val2 === 0) {
+                        final = "Error (División por 0)";
+                    } else {
+                        final = val1 / val2;
+                    }
+                    break;
+                default:
+                    final = "Operación no válida";
+                    break;
+            }
+
+            // 3. Mostrar el resultado en el HTML (DOM)
+            let pantalla = document.getElementById("pantallaResultado");
+            pantalla.style.display = "block"; // Hacemos visible la caja
+            pantalla.innerHTML = "Resultado: " + final;
+            
+            // También lo dejamos en consola
+            console.log(`El resultado final es: ${final}`);
+        }
+    </script>
+</body>
+</html>

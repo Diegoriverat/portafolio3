@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 13 - Números</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; background-color: #f3f4f6; }
+        .resultado { margin-top: 20px; padding: 15px; background: white; border-radius: 8px; font-size: 1.2rem; display: none;}
+        button { padding: 10px 20px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
 <body>
-<h1>JavaScript Numbers</h1>
-<h3>Los números pueden escribirse con o sin decimales.</h3>
+    <h1>JavaScript Numbers</h1>
+    <p>Los números pueden escribirse con o sin decimales.</p>
 
-<p id="resultado"></p>
+    <button onclick="mostrarNumeros()">Ver Ejemplo</button>
+    <div id="demo" class="resultado"></div>
 
-<script>
-
-document.getElementById("resultado").innerHTML = "Hola Mundo JS";
-</script>
-
+    <script>
+    function mostrarNumeros() {
+        let x = 3.14;
+        let y = 3;
+        // Mostramos los resultados en la caja
+        document.getElementById("demo").style.display = "block";
+        document.getElementById("demo").innerHTML = 
+            "Con decimales: <b>" + x + "</b><br>" +
+            "Sin decimales: <b>" + y + "</b>";
+    }
+    </script>
 </body>
 </html>

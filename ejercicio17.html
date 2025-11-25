@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17 - Variables</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .caja {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        span { color: #0d6efd; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 17: Variables en Pantalla</h1>
+    <p>A continuación se muestran los valores almacenados en las variables:</p>
+
+    <div class="caja" id="resultado1"></div>
+    <div class="caja" id="resultado2"></div>
+    <div class="caja" id="resultado3"></div>
+
+    <script>
+        // Declaración de variables
+        let altura = 175; 
+        let otraAltura = altura;
+        let peso = 75;
+        
+        document.getElementById("resultado1").innerHTML = "Altura inicial: <span>" + altura + " cm</span>";
+        document.getElementById("resultado2").innerHTML = "Copia de altura: <span>" + otraAltura + " cm</span>";
+        document.getElementById("resultado3").innerHTML = "Peso actual: <span>" + peso + " kg</span>";
+
+        console.log("Altura:", altura);
+        console.log("Peso:", peso);
+    </script>
+</body>
+</html>

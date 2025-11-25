@@ -1,23 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 15 - If/Else</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; background-color: #fff3cd; }
+        .tarjeta { background: white; padding: 30px; border-radius: 15px; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; background-color: #ffc107; color: #333; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        #demo { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
 <body>
-<h1>JavaScript if .. else</h1>
 
-<p>Un saludo basado en la hora:</p>
+    <div class="tarjeta">
+        <h1>Saludo Automático</h1>
+        <p>El mensaje cambia según la hora del día.</p>
+        
+        <button onclick="verificarHora()">Obtener Saludo</button>
+        <p id="demo"></p>
+    </div>
 
-<p id="demo"></p>
-
-<script>
-const horaActual = new Date().getHours(); 
-let mensaje;
-
-if (horaActual < 19) {
-  mensaje = "La hora es: " + horaActual + ". Que tengas buen día.";
-} else {
-  mensaje = "Buenas noches.";
-}
-
-document.getElementById("demo").innerHTML = mensaje;
-</script>
+    <script>
+    function verificarHora() {
+        const hour = new Date().getHours(); 
+        let greeting;
+        
+        if (hour < 18) {
+            greeting = "🌞 La hora es " + hour + ":00. ¡Buenos días/tardes!";
+        } else {
+            greeting = "g🌙 La hora es " + hour + ":00. ¡Buenas noches!";
+        }
+        
+        document.getElementById("demo").innerHTML = greeting;
+    }
+    </script>
 
 </body>
 </html>

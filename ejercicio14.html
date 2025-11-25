@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 14 - Aritmética</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; background-color: #e2e8f0; }
+        .caja { background: white; padding: 20px; border-radius: 10px; display: inline-block; }
+        button { margin-top: 15px; padding: 10px 20px; background-color: #198754; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #demo { margin-top: 15px; font-weight: bold; font-size: 1.5em; color: #333; }
+    </style>
+</head>
 <body>
 
-<h1>JavaScript Arithmetic</h1>
-<h2>Operaciones Aritméticas</h2>
-<p>Una operación aritmética típica toma dos números y produce uno nuevo.</p>
+    <div class="caja">
+        <h1>Operaciones Aritméticas</h1>
+        <p>Vamos a calcular: <code>(100 + 50) * a</code></p>
+        <p>Donde <b>a = 3</b></p>
+        
+        <button onclick="calcular()">Calcular Resultado</button>
+        <p id="demo"></p>
+    </div>
 
-<p id="demo"></p>
-
-<script>
-let valor = 4;
-let total = (120 + 30) * valor;
-document.getElementById("demo").innerHTML = total;
-</script>
+    <script>
+    function calcular() {
+        let a = 3;
+        let x = (100 + 50) * a;
+        document.getElementById("demo").innerHTML = "Resultado: " + x;
+    }
+    </script>
 
 </body>
 </html>
