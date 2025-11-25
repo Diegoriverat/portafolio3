@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tierra Girando</title>
+    <style>
+        /* 1. Centramos todo el contenido en la pantalla */
+        body {
+            display: flex;
+            justify-content: center; /* Centrado horizontal */
+            align-items: center;     /* Centrado vertical */
+            flex-direction: column;  /* Elementos uno debajo del otro */
+            min-height: 100vh;       /* Altura mínima de toda la pantalla */
+            margin: 0;
+            background-color: #222; /* Fondo oscuro para que resalte */
+            color: white;
+            font-family: sans-serif;
+        }
+
+        /* 2. Definimos la animación de rotación (Keyframes) */
+        /* Esto le dice al navegador: "Empieza en 0 grados y termina en 360 grados" */
+        @keyframes rotacionContinua {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 3. Estilos para la imagen de la Tierra */
+        .tierra {
+            width: 300px;  /* Tamaño de la imagen */
+            height: auto;  /* Mantiene la proporción */
+            
+            /* Aquí aplicamos la animación definida arriba */
+            /* Nombre | Duración | Tipo de movimiento | Repetición */
+            animation: rotacionContinua 12s linear infinite;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Animación CSS</h1>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png" alt="Tierra girando" class="tierra">
+
+</body>
+</html>
